@@ -1,4 +1,4 @@
-/* Shared behaviour for index.html and cv.html */
+/* Shared behaviour for index.html and resume.html */
 (function(){
   const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
   window.$=$; window.$$=$$;
