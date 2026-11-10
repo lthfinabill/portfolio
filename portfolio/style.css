@@ -251,7 +251,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:160;op
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;opacity:0;transition:.4s;z-index:190;font-weight:600;pointer-events:none}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
-/* ---------- CV page ---------- */
+/* ---------- Resume page ---------- */
 .cv-hero{padding-top:clamp(130px,16vw,190px);padding-bottom:clamp(30px,5vw,60px)}
 .cv-hero h1{font-size:clamp(2.8rem,10vw,9rem);font-weight:800;letter-spacing:-.05em;line-height:.88;text-transform:uppercase;margin-top:16px}
 .cv-hero h1 em{font-style:normal;color:var(--accent)}
@@ -305,7 +305,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:160;op
   .hero h1 .line>span{transform:none}
 }
 
-/* ---------- Works page ---------- */
+/* ---------- Project page ---------- */
 .more{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .works-hero{padding-top:clamp(130px,16vw,190px);padding-bottom:clamp(24px,4vw,44px)}
 .works-hero h1{font-size:clamp(3rem,12vw,11rem);font-weight:800;letter-spacing:-.05em;line-height:.86;text-transform:uppercase;margin-top:16px}
@@ -350,7 +350,7 @@ em{font-style:normal}
 .stat b{font-size:clamp(3rem,5.6vw,4.8rem)}
 .marquee span{font-size:clamp(1.8rem,4vw,3.2rem)}
 
-/* ---------- Experience page ---------- */
+/* ---------- Journey page ---------- */
 .exp-list{display:grid;border-top:1px solid var(--line);margin-bottom:clamp(60px,9vw,120px)}
 .exp-row{display:grid;grid-template-columns:120px 1fr auto;gap:clamp(16px,3vw,40px);align-items:center;padding:clamp(18px,2.6vw,30px) 0;border-bottom:1px solid var(--line);transition:padding .4s cubic-bezier(.2,.8,.2,1)}
 .exp-row:hover{padding-left:14px}
