@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience | Luthfi Nabil Ramadhan</title>
+<meta name="description" content="Work experience of Luthfi Nabil Ramadhan, Graphic Designer based in Bogor, Indonesia.">
+<link rel="icon" href="https://luthfinabilramadhan.my.id/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="cur" id="cur"></div>
+
+<div class="bookmark-wrap"><a class="bookmark" href="index.html#home" aria-label="Back to home"><img src="https://luthfinabilramadhan.my.id/assets/favicon.png" alt="Luthfi Nabil Ramadhan logo"></a></div>
+
+<header class="nav" id="nav">
+  <ul>
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="works.html">Project</a></li>
+    <li><a href="experience.html" class="active">Journey</a></li>
+    <li><a href="cv.html">Resume</a></li>
+    <li><a href="#connect">Connect!</a></li>
+  </ul>
+  <button class="icon-btn" id="theme" aria-label="Toggle dark mode">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
+  <button class="icon-btn burger" id="burger" aria-label="Menu">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+  </button>
+</header>
+
+<main class="wrap">
+  <header class="works-hero">
+    <span class="mono" style="color:var(--muted)">Career</span>
+    <h1>My <em>experience</em></h1>
+    <p>Places I have worked with, and how long I was there.</p>
+  </header>
+  <div class="exp-list" id="exp"></div>
+  </main>
+
+<footer class="connect" id="connect">
+  <div class="conn-word" id="connWord"><span id="connText" aria-label="Connect">Connect!</span></div>
+  <div class="conn-links">
+    <a class="conn-mail" href="mailto:luthfinabilramadhan@gmail.com">luthfinabilramadhan@gmail.com</a>
+    <ul>
+      <li><a href="https://www.behance.net/lthfinabill" target="_blank" rel="noopener">Behance</a></li>
+      <li><a href="https://www.linkedin.com/in/luthfinabilramadhan/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.instagram.com/lthfinabill/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@lthfinabill" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://wa.me/6281362685290" target="_blank" rel="noopener">WhatsApp</a></li>
+    </ul>
+  </div>
+  <p class="conn-copy">© <span data-year>2026</span> Luthfi Nabil Ramadhan. All rights reserved.</p>
+</footer>
+
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+<script>
+(function(){
+  /* ======================================================================
+     EDIT HERE. One row per place you worked.
+     [company name, role (optional, '' to hide), period, logo file]
+     Put logo files (PNG/SVG, transparent background) in assets/experience/.
+     If the logo file is missing, the first letter of the name is shown.
+     Rows with ph:true are placeholders: replace the text and delete ph:true.
+     ====================================================================== */
+  const jobs=[
+    {ph:true,name:'Company name',role:'Job title',period:'Mon YYYY – Present',logo:'assets/experience/company-1.png'},
+    {ph:true,name:'Company name',role:'Job title',period:'Mon YYYY – Mon YYYY',logo:'assets/experience/company-2.png'},
+    {ph:true,name:'Company name',role:'Job title',period:'Mon YYYY – Mon YYYY',logo:'assets/experience/company-3.png'}
+  ];
+  /* ====================================================================== */
+  const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  $('#exp').innerHTML=jobs.map(j=>`
+    <article class="exp-row rv${j.ph?' ph':''}">
+      <div class="exp-logo"><img src="${esc(j.logo)}" alt="${esc(j.name)} logo" loading="lazy"><span class="mono-l">${esc(j.name.charAt(0))}</span></div>
+      <div class="exp-main"><h2>${esc(j.name)}</h2>${j.role?`<p class="role">${esc(j.role)}</p>`:''}</div>
+      <div class="exp-period"><span class="mono">${j.ph?'Placeholder':'Period'}</span><b>${esc(j.period)}</b></div>
+    </article>`).join('');
+  $$('.exp-logo img').forEach(im=>{
+    const bad=()=>im.parentElement.classList.add('noimg');
+    im.addEventListener('error',bad);
+    if(im.complete&&im.naturalWidth===0)bad();
+  });
+  observeReveal();
+})();
+</script>
+</body>
+</html>
